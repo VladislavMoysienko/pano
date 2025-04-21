@@ -15,5 +15,5 @@ const viewer = new PANOLENS.Viewer({
 });
 
 viewer.add( panorama );
-viewer.cameraControls.minPolarAngle = THREE.MathUtils.degToRad(45);
-viewer.cameraControls.maxPolarAngle = THREE.MathUtils.degToRad(135);
+viewer.cameraControls.minPolarAngle = THREE.Math.degToRad(40);
+viewer.cameraControls.maxPolarAngle = THREE.Math.degToRad(139);
