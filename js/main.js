@@ -3,15 +3,14 @@ let imageContainer = document.querySelector('.image-container')
 
 
 var infospot = new PANOLENS.Infospot();
-infospot.position.set( 5000.00, 0, 500 );
-infospot.addHoverText('Test');
+infospot.position.set( 5000.00, 300, 1500 );
+infospot.setLinkingImage('images/IMG_0850.png')
 
 const viewer = new PANOLENS.Viewer({
     container: imageContainer,
     horizontalView: true,
     controlBar: true,
 });
-panorama.setLinkingImage('images/IMG_0850.png')
 
 panorama.add(infospot);
 viewer.add(panorama);
