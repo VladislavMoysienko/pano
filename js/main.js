@@ -10,9 +10,8 @@ var infospotPositions = [
 
 const viewer = new PANOLENS.Viewer({
     container: imageContainer,
-    horizontalView: true,
     controlBar: true,
 });
 
 viewer.add( panorama );
-viewer.control.maxFov = 100;
+viewer.control.minFov = 75;
