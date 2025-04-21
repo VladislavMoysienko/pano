@@ -31,7 +31,5 @@ const viewer = new PANOLENS.Viewer({
 
 viewer.camera.fov = 75;
 viewer.camera.updateProjectionMatrix();
-viewer.cameraControls.minPolarAngle = THREE.Math.degToRad(vStartDeg);
-viewer.cameraControls.maxPolarAngle = THREE.Math.degToRad(180 - vStartDeg);
 
 viewer.add(panorama);
