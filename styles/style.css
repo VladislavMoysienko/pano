@@ -1,15 +1,3 @@
-.tour{
-    background: #074357;
-    height: 100vh;
-    margin: 0;
-}
-
-.tour__head{
-    padding-top: 10vh;
-    text-align: center;
-    margin-bottom: 50px;
-}
-
 .image-container{
     height: 30rem;
     width: 78%;
