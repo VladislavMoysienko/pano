@@ -14,4 +14,6 @@ const viewer = new PANOLENS.Viewer({
 });
 
 viewer.add( panorama );
-viewer.control.maxFov = 80;
+viewer.control.maxFov = 65;
+viewer.control.minPolarAngle = 0.5;
+viewer.control.maxPolarAngle = 0.5;
