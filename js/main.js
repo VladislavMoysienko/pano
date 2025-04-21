@@ -3,7 +3,7 @@ let imageContainer = document.querySelector('.image-container')
 
 
 var infospot = new PANOLENS.Infospot();
-infospot.position.set( 5000.00, -1825.25, 197.56 );
+infospot.position.set( 5000.00, 0, 500 );
 infospot.addHoverText('Test');
 
 const viewer = new PANOLENS.Viewer({
