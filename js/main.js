@@ -4,7 +4,13 @@ let imageContainer = document.querySelector('.image-container')
 
 var infospot = new PANOLENS.Infospot();
 infospot.position.set( 5000.00, 300, 1500 );
-infospot.setLinkingImage('images/IMG_0850.png')
+infospot.hoverText(`Час преблаженный,
+День вожделенный!
+Мы оставляем,
+Мы покидаем
+Илимские горы,
+Берлоги, норы.
+А.Н.Радищев`);
 
 const viewer = new PANOLENS.Viewer({
     container: imageContainer,
