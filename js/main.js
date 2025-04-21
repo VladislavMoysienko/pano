@@ -1,4 +1,4 @@
-const panorama = new PANOLENS.ImagePanorama( 'images/texture_8k.png' );
+const panorama = new PANOLENS.ImagePanorama( 'images/texture_4k.png' );
 let imageContainer = document.querySelector('.image-container')
 
 
