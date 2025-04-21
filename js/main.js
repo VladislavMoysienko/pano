@@ -1,19 +1,37 @@
-const panorama = new PANOLENS.ImagePanorama( 'images/texture_8k.png' );
-let imageContainer = document.querySelector('.image-container')
+let imageContainer = document.querySelector('.image-container');
 
+const verticalFOVDeg = (1665 / 8580) * 360;
+const vStartDeg = (180 - verticalFOVDeg) / 2;
+const vEndDeg = verticalFOVDeg;
 
-var infospotPositions = [
-    // new THREE.Vector3(-2136.06, 16.30, 890.14),
-    // new THREE.Vector3(-3136.06, 296.30, -4290.14),
+const geometry = new THREE.SphereBufferGeometry(
+  5000,
+  60,
+  40,
+  0,
+  Math.PI * 2,
+  THREE.Math.degToRad(vStartDeg),
+  THREE.Math.degToRad(vEndDeg) 
+);
 
-  ];
+const textureLoader = new THREE.TextureLoader();
+const texture = textureLoader.load('images/texture_8k.png');
+
+const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.BackSide });
+const mesh = new THREE.Mesh(geometry, material);
+
+const panorama = new PANOLENS.ImagePanorama('images/texture_8k.png');
+panorama.add(mesh);
 
 const viewer = new PANOLENS.Viewer({
-    container: imageContainer,
-    horizontalView: true,
-    controlBar: true,
+  container: imageContainer,
+  controlBar: true,
+  horizontalView: true,
 });
 
-viewer.add( panorama );
-viewer.cameraControls.minPolarAngle = THREE.Math.degToRad(40);
-viewer.cameraControls.maxPolarAngle = THREE.Math.degToRad(139);
+viewer.camera.fov = 75;
+viewer.camera.updateProjectionMatrix();
+viewer.cameraControls.minPolarAngle = THREE.Math.degToRad(vStartDeg);
+viewer.cameraControls.maxPolarAngle = THREE.Math.degToRad(180 - vStartDeg);
+
+viewer.add(panorama);
