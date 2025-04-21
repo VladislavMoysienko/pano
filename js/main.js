@@ -15,4 +15,4 @@ const viewer = new PANOLENS.Viewer({
 });
 
 viewer.add( panorama );
-viewer.cameraControls.maxFov = 100;
+viewer.control.maxFov = 100;
