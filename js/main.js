@@ -2,9 +2,8 @@ const panorama = new PANOLENS.ImagePanorama('images/texture_8k.png');
 let imageContainer = document.querySelector('.image-container')
 
 
-var infospot;
-infospot = new PANOLENS.Infospot();
-infospot.position.set( -5000.00, -1825.25, 197.56 );
+var infospot = new PANOLENS.Infospot();
+infospot.position.set( 5000.00, -1825.25, 197.56 );
 infospot.addHoverText('Test');
 
 const viewer = new PANOLENS.Viewer({
