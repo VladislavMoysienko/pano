@@ -12,7 +12,6 @@ var infospot8 =  new PANOLENS.Infospot(); infospot8.position.set( 5000, 1700, -7
 var infospot9 =  new PANOLENS.Infospot(); infospot9.position.set( 5000, 650, -3350 );  infospot9.addHoverElement( document.getElementById( 'img_9' ), -50 );
 var infospot10 = new PANOLENS.Infospot(); infospot10.position.set( 5000, 650, -5100 ); infospot10.addHoverElement( document.getElementById( 'img_10' ), -50 );
 var infospot11 = new PANOLENS.Infospot(); infospot11.position.set( 5000, 800, -6700 ); infospot11.addHoverElement( document.getElementById( 'img_11' ), -50 );
-
 var infospot12 = new PANOLENS.Infospot(); infospot12.position.set( -5000, 580, -4900 ); infospot12.addHoverElement( document.getElementById( 'img_12' ), -75 );
 var infospot13 = new PANOLENS.Infospot(); infospot13.position.set( -5000, 360, -3600 ); infospot13.addHoverElement( document.getElementById( 'img_13' ), -75 );
 var infospot14 = new PANOLENS.Infospot(); infospot14.position.set( -5000, 300, -1500 ); infospot14.addHoverElement( document.getElementById( 'img_14' ), -75 );
@@ -30,18 +29,15 @@ var infospot25 = new PANOLENS.Infospot(); infospot25.position.set( -5000, 2600, 
 var infospot26 = new PANOLENS.Infospot(); infospot26.position.set( -5000, 2500, -100 ); infospot26.addHoverElement( document.getElementById( 'img_26' ), -200 );
 var infospot27 = new PANOLENS.Infospot(); infospot27.position.set( -5000, 2500, 800 ); infospot27.addHoverElement( document.getElementById( 'img_27' ), -200 );
 var infospot28 = new PANOLENS.Infospot(); infospot28.position.set( -5000, 2300, 2200 ); infospot28.addHoverElement( document.getElementById( 'img_28' ), -200 );
-
 var infospot29 = new PANOLENS.Infospot(); infospot29.position.set( 1300, 450, 7000 ); infospot29.addHoverElement( document.getElementById( 'img_29' ), -100 );
 var infospot30 = new PANOLENS.Infospot(); infospot30.position.set( 2300, 550, 7000 ); infospot30.addHoverElement( document.getElementById( 'img_30' ), -100 );
 var infospot31 = new PANOLENS.Infospot(); infospot31.position.set( 3250, 1700, 7000 ); infospot31.addHoverElement( document.getElementById( 'img_31' ), -100 );
 var infospot32 = new PANOLENS.Infospot(); infospot32.position.set( 1350, 2500, 7000 ); infospot32.addHoverElement( document.getElementById( 'img_32' ), -200 );
-
 var infospot33 = new PANOLENS.Infospot(); infospot33.position.set( 5000, 700, 5400 ); infospot33.addHoverElement( document.getElementById( 'img_33' ), -100 );
 var infospot34 = new PANOLENS.Infospot(); infospot34.position.set( 5000, 2300, 5700 ); infospot34.addHoverElement( document.getElementById( 'img_34' ), -200 );
 var infospot36 = new PANOLENS.Infospot(); infospot36.position.set( 5000, 2300, 3400 ); infospot36.addHoverElement( document.getElementById( 'img_36' ), -200 );
 var infospot37 = new PANOLENS.Infospot(); infospot37.position.set( 5000, 2300, 4600 ); infospot37.addHoverElement( document.getElementById( 'img_37' ), -200 );
 var infospot38 = new PANOLENS.Infospot(); infospot38.position.set( 5000, 2300, 2450 ); infospot38.addHoverElement( document.getElementById( 'img_38' ), -200 );
-
 var infospot35 = new PANOLENS.Infospot(); infospot35.position.set( 300, 450, -7000 ); infospot35.addHoverElement( document.getElementById( 'img_35' ), 0 );
 
 const viewer = new PANOLENS.Viewer({
@@ -59,4 +55,12 @@ viewer.control.minFov = 60;
 function toggleVisibility(id) {
   var el = document.getElementById(id);
   el.style.display = el.style.display === 'none' ? 'block' : 'none';
+}
+
+var elements = document.getElementsByClassName("tour-infospot-img");
+for (var i = 0; i < elements.length; i++) {
+  elements[i].addEventListener("click", (e) => {
+    let src = e.currentTarget.src;
+    window.open(src);
+  });
 }
