@@ -35,19 +35,22 @@ var infospot31 = new PANOLENS.Infospot(); infospot31.position.set( 3250, 1700, 7
 var infospot32 = new PANOLENS.Infospot(); infospot32.position.set( 1350, 2500, 7000 ); infospot32.addHoverElement( document.getElementById( 'img_32' ), -205 );
 var infospot33 = new PANOLENS.Infospot(); infospot33.position.set( 5000, 700, 5400 ); infospot33.addHoverElement( document.getElementById( 'img_33' ), -75 );
 var infospot34 = new PANOLENS.Infospot(); infospot34.position.set( 5000, 2300, 5700 ); infospot34.addHoverElement( document.getElementById( 'img_34' ), -205 );
+var infospot35 = new PANOLENS.Infospot(); infospot35.position.set( 300, 450, -7000 ); infospot35.addHoverElement( document.getElementById( 'img_35' ), 0 );
 var infospot36 = new PANOLENS.Infospot(); infospot36.position.set( 5000, 2900, 3350 ); infospot36.addHoverElement( document.getElementById( 'img_36' ), -205 );
 var infospot37 = new PANOLENS.Infospot(); infospot37.position.set( 5000, 2400, 4600 ); infospot37.addHoverElement( document.getElementById( 'img_37' ), -205 );
 var infospot38 = new PANOLENS.Infospot(); infospot38.position.set( 5000, 2300, 2400 ); infospot38.addHoverElement( document.getElementById( 'img_38' ), -205 );
-var infospot35 = new PANOLENS.Infospot(); infospot35.position.set( 300, 450, -7000 ); infospot35.addHoverElement( document.getElementById( 'img_35' ), 0 );
+var infospot_ryupin = new PANOLENS.Infospot(); infospot_ryupin.position.set( 850, 2000, -7000 ); infospot_ryupin.addHoverElement( document.getElementById( 'ryupin' ), -100 );
+var infospot_zamaratskij = new PANOLENS.Infospot(); infospot_zamaratskij.position.set( -5000, -350, -2900 ); infospot_zamaratskij.addHoverElement( document.getElementById( 'zamaratskij' ), 0 );
+var infospot_pavlov = new PANOLENS.Infospot(); infospot_pavlov.position.set( 5000, 3700, -5050); infospot_pavlov.addHoverElement( document.getElementById( 'pavlov' ), -215 );
 
 const viewer = new PANOLENS.Viewer({
     container: imageContainer,
     horizontalView: true,
-    controlBar: true,
+    controlBar: false,
     cameraFov: 67
 });
 
-panorama.add(infospot1, infospot2, infospot3, infospot4, infospot5, infospot6, infospot7, infospot8, infospot9, infospot10, infospot11, infospot12, infospot13, infospot14, infospot15, infospot16, infospot17, infospot18, infospot19, infospot20, infospot21, infospot22, infospot23, infospot24, infospot25, infospot26, infospot27, infospot28, infospot29, infospot30, infospot31, infospot32, infospot33, infospot34, infospot35, infospot36, infospot37, infospot38);
+panorama.add(infospot1, infospot2, infospot3, infospot4, infospot5, infospot6, infospot7, infospot8, infospot9, infospot10, infospot11, infospot12, infospot13, infospot14, infospot15, infospot16, infospot17, infospot18, infospot19, infospot20, infospot21, infospot22, infospot23, infospot24, infospot25, infospot26, infospot27, infospot28, infospot29, infospot30, infospot31, infospot32, infospot33, infospot34, infospot35, infospot36, infospot37, infospot38, infospot_zamaratskij, infospot_pavlov, infospot_ryupin);
 
 viewer.add(panorama);
 viewer.control.maxFov = 67;
@@ -58,10 +61,14 @@ function toggleVisibility(id) {
   el.style.display = el.style.display === 'none' ? 'block' : 'none';
 }
 
-var elements = document.getElementsByClassName("tour-infospot-img");
+var elements = document.getElementsByClassName("tour-infospot");
+
 for (var i = 0; i < elements.length; i++) {
-  elements[i].addEventListener("click", (e) => {
-    let src = e.currentTarget.src;
-    window.open(src);
-  });
+  var imgs = elements[i].getElementsByTagName("img");
+  for (var j = 0; j < imgs.length; j++) {
+    imgs[j].addEventListener("click", (e) => {
+      let src = e.currentTarget.src;
+      window.open(src);
+    });
+  }
 }
